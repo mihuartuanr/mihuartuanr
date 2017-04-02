@@ -1,3 +1,16 @@
+.header {
+  background: #171717;
+}
+.menu .menu-item a {
+  color: #fff;
+}
+.brand {
+  color: #fff;
+}
+.logo-line-before i,
+.logo-line-after i {
+  background: #fff;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -1691,7 +1704,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #21f5b6;
+  background: #7de7ff;
 }
 .links-of-blogroll {
   font-size: 13px;
