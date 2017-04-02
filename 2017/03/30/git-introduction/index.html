@@ -1,0 +1,921 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="愿我们每一天脸上都能看见笑容，愿我们的每一个理想都能实现" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="安装sudo apt-get install git
+初始化git库通过本地已有文件初始化git库git init
+通过克隆远程库初始化git库git clone &amp;lt;remote repository url&amp;gt; –&amp;gt; 新建一个远端的仓库名的文件夹
+git clone &amp;lt;remote repository url&amp;gt; &amp;lt;directory name&amp;gt; –&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git入门">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/git-introduction/index.html">
+<meta property="og:site_name" content="旭光朝影">
+<meta property="og:description" content="安装sudo apt-get install git
+初始化git库通过本地已有文件初始化git库git init
+通过克隆远程库初始化git库git clone &amp;lt;remote repository url&amp;gt; –&amp;gt; 新建一个远端的仓库名的文件夹
+git clone &amp;lt;remote repository url&amp;gt; &amp;lt;directory name&amp;gt; –&amp;gt">
+<meta property="og:updated_time" content="2017-04-02T06:07:03.610Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git入门">
+<meta name="twitter:description" content="安装sudo apt-get install git
+初始化git库通过本地已有文件初始化git库git init
+通过克隆远程库初始化git库git clone &amp;lt;remote repository url&amp;gt; –&amp;gt; 新建一个远端的仓库名的文件夹
+git clone &amp;lt;remote repository url&amp;gt; &amp;lt;directory name&amp;gt; –&amp;gt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/30/git-introduction/"/>
+
+
+
+
+
+  <title> git入门 | 旭光朝影 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旭光朝影</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">念念不忘，必有回响</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-layout">
+          <a href="/layout" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-braille"></i> <br />
+            
+            页面布局
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-javascript">
+          <a href="/javascript" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-deaf"></i> <br />
+            
+            JS入门
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-workflow">
+          <a href="/workflow" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-wheelchair-alt"></i> <br />
+            
+            工作流
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-server">
+          <a href="/server" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-laptop"></i> <br />
+            
+            服务器端
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/git-introduction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mihuarutanr">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旭光朝影">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                git入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T13:53:49+08:00">
+                2017-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/03/30/git-introduction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><code>sudo apt-get install git</code></p>
+<h1 id="初始化git库"><a href="#初始化git库" class="headerlink" title="初始化git库"></a>初始化git库</h1><h2 id="通过本地已有文件初始化git库"><a href="#通过本地已有文件初始化git库" class="headerlink" title="通过本地已有文件初始化git库"></a>通过本地已有文件初始化git库</h2><p><code>git init</code></p>
+<h2 id="通过克隆远程库初始化git库"><a href="#通过克隆远程库初始化git库" class="headerlink" title="通过克隆远程库初始化git库"></a>通过克隆远程库初始化git库</h2><p><code>git clone &lt;remote repository url&gt;</code> –&gt; 新建一个<strong>远端的仓库名</strong>的文件夹</p>
+<p><code>git clone &lt;remote repository url&gt; &lt;directory name&gt;</code> –&gt; 克隆远程库并放置于<strong>指定的文件夹</strong></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><a id="more"></a>
+<h2 id="全局项目文件配置："><a href="#全局项目文件配置：" class="headerlink" title="全局项目文件配置："></a>全局项目文件配置：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;yourName&quot;</div><div class="line">git config --global user.email &quot;yourEmail&quot;</div></pre></td></tr></table></figure>
+<h2 id="当前项目文件配置："><a href="#当前项目文件配置：" class="headerlink" title="当前项目文件配置："></a>当前项目文件配置：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --local user.name &quot;yourName&quot;</div><div class="line">git config --local user.email &quot;yourEmail&quot;</div></pre></td></tr></table></figure>
+<h2 id="忽略配置"><a href="#忽略配置" class="headerlink" title="忽略配置"></a>忽略配置</h2><p><code>vi .gitignore</code></p>
+<p>在文件中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.vscode/  --&gt; 忽略的文件夹</div><div class="line">*.swp --&gt; 忽略的文件</div><div class="line">!a.swp --&gt; 忽略除了&quot;a.swp&quot;以外, 所有以&quot;.swp&quot;结尾的文件</div></pre></td></tr></table></figure></p>
+<h1 id="色彩识别"><a href="#色彩识别" class="headerlink" title="色彩识别"></a>色彩识别</h1><h2 id="黄绿色："><a href="#黄绿色：" class="headerlink" title="黄绿色："></a>黄绿色：</h2><pre><code>提交的变更（工作区未修改）
+</code></pre><h2 id="红色："><a href="#红色：" class="headerlink" title="红色："></a>红色：</h2><pre><code>未跟踪的文件
+尚未暂存以备提交的变更
+</code></pre><h1 id="四个组态"><a href="#四个组态" class="headerlink" title="四个组态"></a>四个组态</h1><h2 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h2><h3 id="未追踪状态"><a href="#未追踪状态" class="headerlink" title="未追踪状态"></a>未追踪状态</h3><p><strong>untracked</strong><br>通过<code>git status</code>查看所处的状态;</p>
+<p><code>git diff &lt;filename&gt;</code> –&gt; 查看 staging area 和 working directory 中文件的差异;<br><code>git diff HEAD</code> –&gt; 查看 working directory 与 repository 之间的差异;<br><a href="http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html" target="_blank" rel="external">读懂git diff</a></p>
+<p>工作区状态下输入命令：<br><code>git checkout -- &lt;filename&gt;</code> –&gt; 放弃工作区的文件修改（即：使用staging area中的版本覆盖工作区的版本）<br><code>git add &lt;filename&gt;</code>  –&gt; 进入缓存区, 并监听变化（即：已追踪）</p>
+<h2 id="缓存区（staging-area）-索引区（index）"><a href="#缓存区（staging-area）-索引区（index）" class="headerlink" title="缓存区（staging area）/索引区（index）"></a>缓存区（staging area）/索引区（index）</h2><p><code>git diff --cached</code> –&gt; 查看 repository 与 staging area 之间的差异</p>
+<p>缓存区状态下输入命令：<br><code>git rm --cached &lt;filename&gt;</code> –&gt; 撤销上一次add;<br><code>git rm --cached -f &lt;filename&gt;</code> –&gt; 撤销上一次add，并删除工作区中的文件;</p>
+<p><code>git commit -m &quot;备注信息&quot;</code> –&gt; 提交至本地库;<br><code>git commit --amend</code> –&gt; 提交刚刚遗漏的文件;<br><code>git commit --date=&quot;Wed Feb 16 14:00 2037 +0100&quot;</code> –&gt; 为提交添上时间;</p>
+<p><code>git rebase &lt;base branch&gt; &lt;apply branch&gt;</code> –&gt; 对<code>&lt;apply branch&gt;</code>的历史提交进行合并、嫁接到<code>&lt;base branch&gt;</code>，不加第二个参数，默认是当前分支;</p>
+<blockquote>
+<p>git rebase可以让你对commit进行修改、<strong>调整顺序</strong>、合并等操作、并能以线性的方式进行分支的<strong>合并</strong>与<strong>嫁接</strong>等。<br>git rebase是对commit history的改写。当你要改写的commit history<strong>还没有被提交到远程repo</strong>的时候，也就是说，还没有与他人共享之前，commit history是你私人所有的，那么想怎么改写都可以。<br>rebase就是把某个分支上的一部分commit嫁接到另一个commit后面，而在这个过程中这些commit的base（基）变了，所以这个操作叫做『变基』。<br>如果你想让<strong>分支历史看起来像没有经过任何合并</strong>一样，你也许可以用 git rebase:<br>在rebase的过程中，也许会出现冲突(conflict). 在这种情况，Git会停止rebase并会让你去解决冲突；在解决完冲突后，用<code>git-add</code>命令去更新这些内容的索引(index), 然后，你<strong>无需执行 git-commit</strong>,只要执行<code>git rebase --continue</code>,这样git会继续应用(apply)余下的补丁。<br>在任何时候，你可以用–abort参数(<code>git rebase --abort</code>)来终止rebase的行动，并且”mywork” 分支会回到rebase开始前的状态。<br>在使用<code>git pull</code>命令的时候，可以使用–rebase参数，即<code>git pull --rebase</code>,这里表示把你的本地当前分支里的每个提交(commit)取消掉，并且把它们临时保存为补丁(patch)(这些补丁放到”.git/rebase”目录中),然后把<strong>本地当前分支更新为最新的”origin”分支</strong>，最后把保存的这些补丁应用到本地当前分支上。<br><a href="https://git-scm.com/docs/git-rebase" target="_blank" rel="external">git rebase文档</a></p>
+</blockquote>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p><code>git grep -n &lt;string&gt;</code> –&gt;  找出所有包含<strong>指定字符</strong>的文件，并显示行号, 支持各种条件搜索及正则表达式;</p>
+<p><code>git rebase -i &lt;commit id&gt;</code> –&gt; 罗列出此提交之后的所有提交，然后可以对个个提交做对应的操作;</p>
+<p><code>git rm -rf &lt;filename&gt;</code> –&gt; 删除缓存区的文件</p>
+<p><code>git mv &lt;old filename&gt; &lt;new filename&gt;</code> –&gt; 重命名，且不改变组态;<br><code>git mv &lt;old filename&gt; &lt;target directory&gt;</code> –&gt; 移动到指定目录下，不改变组态;</p>
+<h2 id="本地库"><a href="#本地库" class="headerlink" title="本地库"></a>本地库</h2><p><code>git reset HEAD &lt;--soft | --mixed | --hard&gt; &lt; filename &gt;</code> –&gt; 撤销上一次commit;</p>
+<blockquote>
+<p>撤销上一次提交。<br>可以指定文件；<br>–soft 参数将上一次的提交版本（本地库）覆盖staging area<br>–mixed 参数将上一次的提交版本覆盖 working directory<br>–hard 参数直接将上一次的提交抛弃</p>
+</blockquote>
+<p><code>git push origin &lt;branch&gt;</code> –&gt; 推送分支到远程origin库;</p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p><code>git tag &lt;commit id&gt; &lt;tagname&gt;</code> –&gt; 为指定的 commit 打tag，不加commitID参数就是为当前 commit 记录 tag;<br><code>git push origin --tags</code> –&gt; 将本地所有的标签push到远程库</p>
+<h2 id="远程库"><a href="#远程库" class="headerlink" title="远程库"></a>远程库</h2><p><code>git remote -v</code> –&gt; 查看远程库，<code>-v</code>返回远端仓库的 URL;</p>
+<p><code>git pull origin remote : local</code> –&gt; 拉取远端仓库，不加<code>local</code>参数的话，本地默认创建与远程同名库;<br><code>git push origin local : remote</code> –&gt; 推送本地分支到远程库;</p>
+<p><code>git remote add &lt;branch name&gt; &lt;remote repo url&gt;</code> –&gt; 添加一个带url的远程库;</p>
+<h1 id="查看历史"><a href="#查看历史" class="headerlink" title="查看历史"></a>查看历史</h1><p><code>git log &lt;--graph --all&gt;</code> 查看历史提交记录, –all查看所有分支的提交记录;<br>按照倒叙排列的，最新的在最前面。</p>
+<p><code>git blame &lt;filename&gt;</code> –&gt; 列出文件中每行的修改人;</p>
+<h1 id="多分支操作"><a href="#多分支操作" class="headerlink" title="多分支操作"></a>多分支操作</h1><p><code>git branch &lt;branch name&gt;</code> –&gt; 在本地创建分支;<br><code>git checkout -b &lt;branch name&gt;</code> –&gt; 本地创建分支并切到该分支;<br><code>git branch &lt;branch name&gt; &lt;commit id&gt;</code> –&gt; 根据一个指定的提交创建新分支;</p>
+<p><code>git branch &lt;-d | -D&gt; &lt;branch name&gt;</code> –&gt; 删除本地分支（未合并时，通过-D强制删除）;</p>
+<p><code>git push origin &lt;local branch name&gt;</code> –&gt; 将本地分支推送到远端仓库;</p>
+<p><code>git checkout &lt;tag name&gt;</code> –&gt; 切换到指定的 tag;<br><code>git checkout tags/&lt;tag name&gt;</code> –&gt; 在分支和标签重名时，切换到指定tag;</p>
+<h2 id="工作区文件变更后要去修改另一个分支的bug"><a href="#工作区文件变更后要去修改另一个分支的bug" class="headerlink" title="工作区文件变更后要去修改另一个分支的bug"></a>工作区文件变更后要去修改另一个分支的bug</h2><p><code>git stash</code>临时提交到git维护的一个栈中保存，支持提交多次。<br>切换到另一个分支，修改bug。<br>修改完成后，如果需要恢复某次提交，使用 git stash apply 即可。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/31/Webpack_CodeSplitting/" rel="next" title="WebpackのCode Splitting">
+                <i class="fa fa-chevron-left"></i> WebpackのCode Splitting
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/02/gulp-introduction/" rel="prev" title="Gulp使用说明">
+                Gulp使用说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Mihuarutanr" />
+          <p class="site-author-name" itemprop="name">Mihuarutanr</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化git库"><span class="nav-number">2.</span> <span class="nav-text">初始化git库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过本地已有文件初始化git库"><span class="nav-number">2.1.</span> <span class="nav-text">通过本地已有文件初始化git库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过克隆远程库初始化git库"><span class="nav-number">2.2.</span> <span class="nav-text">通过克隆远程库初始化git库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局项目文件配置："><span class="nav-number">3.1.</span> <span class="nav-text">全局项目文件配置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前项目文件配置："><span class="nav-number">3.2.</span> <span class="nav-text">当前项目文件配置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略配置"><span class="nav-number">3.3.</span> <span class="nav-text">忽略配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#色彩识别"><span class="nav-number">4.</span> <span class="nav-text">色彩识别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#黄绿色："><span class="nav-number">4.1.</span> <span class="nav-text">黄绿色：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#红色："><span class="nav-number">4.2.</span> <span class="nav-text">红色：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四个组态"><span class="nav-number">5.</span> <span class="nav-text">四个组态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区"><span class="nav-number">5.1.</span> <span class="nav-text">工作区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#未追踪状态"><span class="nav-number">5.1.1.</span> <span class="nav-text">未追踪状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存区（staging-area）-索引区（index）"><span class="nav-number">5.2.</span> <span class="nav-text">缓存区（staging area）/索引区（index）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作"><span class="nav-number">5.2.1.</span> <span class="nav-text">文件操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地库"><span class="nav-number">5.3.</span> <span class="nav-text">本地库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标签"><span class="nav-number">5.3.1.</span> <span class="nav-text">标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程库"><span class="nav-number">5.4.</span> <span class="nav-text">远程库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看历史"><span class="nav-number">6.</span> <span class="nav-text">查看历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多分支操作"><span class="nav-number">7.</span> <span class="nav-text">多分支操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区文件变更后要去修改另一个分支的bug"><span class="nav-number">7.1.</span> <span class="nav-text">工作区文件变更后要去修改另一个分支的bug</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mihuarutanr</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "a8c4e0c38deb48d58adf0c8500c2c26e",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
