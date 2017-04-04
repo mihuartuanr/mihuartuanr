@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="愿我们每一天脸上都能看见笑容，愿我们的每一个理想都能实现" />
+  <meta name="keywords" content="愿我们的脸上每天都能看到笑容； 愿我们以后的每一个梦都不会一场空" />
 
 
 
@@ -310,8 +310,8 @@
   
   
 
-  <article class="post post-type-workflow " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/02/gulp-introduction/">
+  <article class="post post-type-server " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/ubuntu-install-tools-introduction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mihuarutanr">
@@ -333,7 +333,137 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/02/gulp-introduction/" itemprop="url">
+                <a class="post-title-link" href="/2017/04/04/ubuntu-install-tools-introduction/" itemprop="url">
+                  ubuntu install tools introduction
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T09:22:20+08:00">
+                2017-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>ubuntu 16.04 x86_64 kernel 4.4.0-47-generic</p>
+<h1 id="必备软件"><a href="#必备软件" class="headerlink" title="必备软件"></a>必备软件</h1><h2 id="chrome-浏览器"><a href="#chrome-浏览器" class="headerlink" title="chrome 浏览器"></a>chrome 浏览器</h2><p>sudo wget <a href="https://repo.fdzh.org/chrome/google-chrome.list">https://repo.fdzh.org/chrome/google-chrome.list</a> -P /etc/apt/sources.list.d/</p>
+<p>wget -q -O - <a href="https://dl.google.com/linux/linux_signing_key.pub">https://dl.google.com/linux/linux_signing_key.pub</a>  | sudo apt-key add -</p>
+<p>sudo apt-get update</p>
+<p>sudo apt-get install google-chrome-stable</p>
+<p>google-chrome-stable</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/04/ubuntu-install-tools-introduction/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-workflow " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/gulp-introduction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mihuarutanr">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旭光朝影">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/04/gulp-introduction/" itemprop="url">
                   Gulp使用说明
                 </a>
               
@@ -350,8 +480,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-02T14:07:03+08:00">
-                2017-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T09:16:28+08:00">
+                2017-04-04
               </time>
             
 
@@ -390,10 +520,9 @@
           <h2 id="应用环境"><a href="#应用环境" class="headerlink" title="应用环境"></a>应用环境</h2><p>确保安装好NodeJS和NPM；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">在命令行输入：node -v</div><div class="line">命令行输出：v6.9.5</div><div class="line"></div><div class="line">在命令行输入：npm -v</div><div class="line">命令行输出：v4.2.0</div></pre></td></tr></table></figure>
 <p>只要有输出版本号就代表已经安装好了应用环境；<br>环境没有安装的话，会命令行会返回<code>command not found</code>，安装对应的NodeJS/NPM；</p>
-<h2 id="安装gulp"><a href="#安装gulp" class="headerlink" title="安装gulp"></a>安装gulp</h2>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/02/gulp-introduction/#more" rel="contents">
+            <a class="btn" href="/2017/04/04/gulp-introduction/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -519,7 +648,6 @@
 <h1 id="初始化git库"><a href="#初始化git库" class="headerlink" title="初始化git库"></a>初始化git库</h1><h2 id="通过本地已有文件初始化git库"><a href="#通过本地已有文件初始化git库" class="headerlink" title="通过本地已有文件初始化git库"></a>通过本地已有文件初始化git库</h2><p><code>git init</code></p>
 <h2 id="通过克隆远程库初始化git库"><a href="#通过克隆远程库初始化git库" class="headerlink" title="通过克隆远程库初始化git库"></a>通过克隆远程库初始化git库</h2><p><code>git clone &lt;remote repository url&gt;</code> –&gt; 新建一个<strong>远端的仓库名</strong>的文件夹</p>
 <p><code>git clone &lt;remote repository url&gt; &lt;directory name&gt;</code> –&gt; 克隆远程库并放置于<strong>指定的文件夹</strong></p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/30/git-introduction/#more" rel="contents">
@@ -736,7 +864,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -749,7 +877,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
