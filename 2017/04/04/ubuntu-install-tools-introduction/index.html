@@ -88,21 +88,18 @@
 
 
 <meta name="description" content="ubuntu 16.04 x86_64 kernel 4.4.0-47-generic
-必备软件chrome 浏览器sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
-wget -q -O - https://dl.google.com/linux/linux_signing_k">
+必备软件chrome 浏览器1234sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/wget -q -O - https://dl.google.com/linux/linux_signin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu软件安装说明">
 <meta property="og:url" content="http://yoursite.com/2017/04/04/ubuntu-install-tools-introduction/index.html">
 <meta property="og:site_name" content="旭光朝影">
 <meta property="og:description" content="ubuntu 16.04 x86_64 kernel 4.4.0-47-generic
-必备软件chrome 浏览器sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
-wget -q -O - https://dl.google.com/linux/linux_signing_k">
-<meta property="og:updated_time" content="2017-04-04T01:26:39.000Z">
+必备软件chrome 浏览器1234sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/wget -q -O - https://dl.google.com/linux/linux_signin">
+<meta property="og:updated_time" content="2017-04-04T01:31:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu软件安装说明">
 <meta name="twitter:description" content="ubuntu 16.04 x86_64 kernel 4.4.0-47-generic
-必备软件chrome 浏览器sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
-wget -q -O - https://dl.google.com/linux/linux_signing_k">
+必备软件chrome 浏览器1234sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/wget -q -O - https://dl.google.com/linux/linux_signin">
 
 
 
@@ -402,31 +399,20 @@ wget -q -O - https://dl.google.com/linux/linux_signing_k">
 
       
         <p>ubuntu 16.04 x86_64 kernel 4.4.0-47-generic</p>
-<h1 id="必备软件"><a href="#必备软件" class="headerlink" title="必备软件"></a>必备软件</h1><h2 id="chrome-浏览器"><a href="#chrome-浏览器" class="headerlink" title="chrome 浏览器"></a>chrome 浏览器</h2><p>sudo wget <a href="https://repo.fdzh.org/chrome/google-chrome.list" target="_blank" rel="external">https://repo.fdzh.org/chrome/google-chrome.list</a> -P /etc/apt/sources.list.d/</p>
-<p>wget -q -O - <a href="https://dl.google.com/linux/linux_signing_key.pub" target="_blank" rel="external">https://dl.google.com/linux/linux_signing_key.pub</a>  | sudo apt-key add -</p>
-<p>sudo apt-get update</p>
-<p>sudo apt-get install google-chrome-stable</p>
-<p>google-chrome-stable</p>
+<h1 id="必备软件"><a href="#必备软件" class="headerlink" title="必备软件"></a>必备软件</h1><h2 id="chrome-浏览器"><a href="#chrome-浏览器" class="headerlink" title="chrome 浏览器"></a>chrome 浏览器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/</div><div class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install google-chrome-stable</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="adobe-flash播放"><a href="#adobe-flash播放" class="headerlink" title="adobe flash播放"></a>adobe flash播放</h2><p>sudo apt-get install ubuntu-restricted-extras</p>
-<p>sudo apt-get install flashplugin-installer</p>
+<h2 id="adobe-flash播放"><a href="#adobe-flash播放" class="headerlink" title="adobe flash播放"></a>adobe flash播放</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ubuntu-restricted-extras</div><div class="line">sudo apt-get install flashplugin-installer</div></pre></td></tr></table></figure>
 <p>FireFox ok<br>Chrome 报错：Adobe Flash Player已过期<br>解决方法：<br>  step 1，设置全局翻墙代理<br>  step 2，在Chrome的地址栏里面输入，chrome://components/ 然后手动更新adobe flash player插件</p>
-<h2 id="视频播放vlc"><a href="#视频播放vlc" class="headerlink" title="视频播放vlc"></a>视频播放vlc</h2><p>sudo add-apt-repository ppa:videolan/master-daily</p>
-<p>sudo apt-get update</p>
-<p>sudo apt-get install vlc</p>
-<h2 id="安装virtualbox-5-1"><a href="#安装virtualbox-5-1" class="headerlink" title="安装virtualbox 5.1"></a>安装virtualbox 5.1</h2><p>sudo apt remove virtualbox virtualbox-5.0 virtualbox-4.*</p>
-<p>sudo sh -c ‘echo “deb <a href="http://download.virtualbox.org/virtualbox/debian" target="_blank" rel="external">http://download.virtualbox.org/virtualbox/debian</a> xenial contrib” &gt;&gt; /etc/apt/sources.list.d/virtualbox.list’</p>
-<p>wget -q <a href="https://www.virtualbox.org/download/oracle_vbox_2016.asc" target="_blank" rel="external">https://www.virtualbox.org/download/oracle_vbox_2016.asc</a> -O- | sudo apt-key add -</p>
-<p>sudo apt update</p>
-<p>sudo apt install virtualbox-5.1<br>禁用upadate</p>
+<h2 id="视频播放vlc"><a href="#视频播放vlc" class="headerlink" title="视频播放vlc"></a>视频播放vlc</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:videolan/master-daily</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install vlc</div></pre></td></tr></table></figure>
+<h2 id="安装virtualbox-5-1"><a href="#安装virtualbox-5-1" class="headerlink" title="安装virtualbox 5.1"></a>安装virtualbox 5.1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apt remove virtualbox virtualbox-5.0 virtualbox-4.*</div><div class="line">sudo sh -c &apos;echo &quot;deb http://download.virtualbox.org/virtualbox/debian xenial contrib&quot; &gt;&gt; /etc/apt/sources.list.d/virtualbox.list&apos;</div><div class="line">wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -</div><div class="line">sudo apt update</div><div class="line">sudo apt install virtualbox-5.1</div></pre></td></tr></table></figure>
 <h2 id="QQ"><a href="#QQ" class="headerlink" title="QQ"></a>QQ</h2><p><a href="http://www.ubuntukylin.com/application/show.php?lang=cn&amp;id=279" target="_blank" rel="external">优麒麟</a></p>
-<h1 id="开发基础"><a href="#开发基础" class="headerlink" title="开发基础"></a>开发基础</h1><h2 id="基础编译工具"><a href="#基础编译工具" class="headerlink" title="基础编译工具"></a>基础编译工具</h2><p>apt-get install build-essential</p>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>sudo apt-get install git</p>
-<h2 id="openjdk-8"><a href="#openjdk-8" class="headerlink" title="openjdk 8"></a>openjdk 8</h2><p>sudo apt-get install openjdk-8-jdk</p>
-<h2 id="sublime-text3"><a href="#sublime-text3" class="headerlink" title="sublime text3"></a>sublime text3</h2><p>sudo add-apt-repository ppa:webupd8team/sublime-text-3<br>sudo apt-get update<br>sudo apt-get install sublime-text-installer</p>
+<h1 id="开发基础"><a href="#开发基础" class="headerlink" title="开发基础"></a>开发基础</h1><h2 id="基础编译工具"><a href="#基础编译工具" class="headerlink" title="基础编译工具"></a>基础编译工具</h2><p><code>apt-get install build-essential</code></p>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p><code>sudo apt-get install git</code></p>
+<h2 id="openjdk-8"><a href="#openjdk-8" class="headerlink" title="openjdk 8"></a>openjdk 8</h2><p><code>sudo apt-get install openjdk-8-jdk</code></p>
+<h2 id="sublime-text3"><a href="#sublime-text3" class="headerlink" title="sublime text3"></a>sublime text3</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/sublime-text-3</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install sublime-text-installer</div></pre></td></tr></table></figure>
 <p>中文输入有问题，需要每个人自己解决，参考这里<br><a href="https://github.com/lyfeyaj/sublime-text-imfix" target="_blank" rel="external">https://github.com/lyfeyaj/sublime-text-imfix</a></p>
 <p>各种插件需要安装，安装package control需要翻墙，请翻墙后再安装</p>
-<h2 id="nodejs-安装"><a href="#nodejs-安装" class="headerlink" title="nodejs 安装"></a>nodejs 安装</h2><p>nodejs在线升级脚本：<br>curl -sL <a href="https://deb.nodesource.com/setup_6.x" target="_blank" rel="external">https://deb.nodesource.com/setup_6.x</a> | sudo -E bash -<br>等待完成后安装nodejs<br>sudo apt-get install -y nodejs<br>安装完成后即可<br>node -v 查看 node安装版本<br>npm -v  查看 npm安装版本</p>
+<h2 id="nodejs-安装"><a href="#nodejs-安装" class="headerlink" title="nodejs 安装"></a>nodejs 安装</h2><p>nodejs在线升级脚本：<br><code>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</code><br>等待完成后安装nodejs<br><code>sudo apt-get install -y nodejs</code><br>安装完成后即可<br>node -v 查看 node安装版本<br>npm -v  查看 npm安装版本</p>
 <p>npm管理工具更换国内淘宝源以及npm更新</p>
 <p>vi ~/.npmrc  编辑.npmrc文件<br>插入registry = <a href="https://registry.npm.taobao.org,输入:wq" target="_blank" rel="external">https://registry.npm.taobao.org,输入:wq</a> 退出并保存<br>cat ~/.npmrc 执行<br>sudo npm install -g npm 更新npm</p>
 <h2 id="数据库安装"><a href="#数据库安装" class="headerlink" title="数据库安装"></a>数据库安装</h2><p>sudo apt-get install mysql-server<br><a href="https://help.ubuntu.com/12.04/serverguide/mysql.html#mysql-installation" target="_blank" rel="external">https://help.ubuntu.com/12.04/serverguide/mysql.html#mysql-installation</a></p>
