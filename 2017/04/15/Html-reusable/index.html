@@ -97,18 +97,18 @@
 <meta property="og:description" content="我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。
 重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。
 烦了么？">
-<meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/GIF.gif">
-<meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/localInstall.gif">
-<meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/instruction.gif">
-<meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/stractSegment.gif">
-<meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/gulpfile.gif">
-<meta property="og:updated_time" content="2017-04-15T09:24:49.683Z">
+<meta property="og:image" content="http://yoursite.com/images/gulpFileInclude/GIF.gif">
+<meta property="og:image" content="http://yoursite.com/images/gulpFileInclude/localInstall.gif">
+<meta property="og:image" content="http://yoursite.com/images/gulpFileInclude/instruction.gif">
+<meta property="og:image" content="http://yoursite.com/images/gulpFileInclude/stractSegment.gif">
+<meta property="og:image" content="http://yoursite.com/images/gulpFileInclude/gulpfile.gif">
+<meta property="og:updated_time" content="2017-04-15T09:32:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML复用（一）">
 <meta name="twitter:description" content="我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。
 重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。
 烦了么？">
-<meta name="twitter:image" content="http://yoursite.com/../images/gulpFileInclude/GIF.gif">
+<meta name="twitter:image" content="http://yoursite.com/images/gulpFileInclude/GIF.gif">
 
 
 
@@ -414,7 +414,7 @@
 <a id="more"></a>
 <h2 id="搭建目录结构"><a href="#搭建目录结构" class="headerlink" title="搭建目录结构"></a>搭建目录结构</h2><p>开始项目之前，我们先构建一下目录结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">|-src  // 生产环境的资源文件夹</div><div class="line">	|-client  // 可视资源存放的文件夹</div><div class="line">		|-index.html  // 主页html 文件</div><div class="line">		|-include  // 可复用的html片段</div><div class="line">		|-lib  // 第三方工具库</div><div class="line">		|-logic  // 自定义JS逻辑代码</div><div class="line">		|-scss  // 项目样式文件</div><div class="line">			|-index.scss</div><div class="line">			|-include  // 可复用的样式文件夹</div><div class="line">			|-images  // 各页面公共图片</div><div class="line">			|-fonts  // 字体文件：iconfont</div><div class="line">		|-images  // 项目示例图片</div><div class="line">	|-server // 数据资源存放的文件夹</div><div class="line">|-config //编辑部分配置文件：站点模板/图标</div></pre></td></tr></table></figure>
-<h2 id="搭建复用HTML的环境"><a href="#搭建复用HTML的环境" class="headerlink" title="搭建复用HTML的环境"></a>搭建复用HTML的环境</h2><p>win7安装node：<br><img src="../images/gulpFileInclude/GIF.gif" alt="安装node与gulp" title="GIF"></p>
+<h2 id="搭建复用HTML的环境"><a href="#搭建复用HTML的环境" class="headerlink" title="搭建复用HTML的环境"></a>搭建复用HTML的环境</h2><p>win7安装node：<br><img src="/images/gulpFileInclude/GIF.gif" alt="安装node与gulp" title="GIF"></p>
 <p>win7系统下安装<code>node</code>直接下一步就可以的，这是使用<code>gulp</code>的环境，先安装<code>node</code>再安装<code>gulp</code>，<code>gulp</code>是复用HTML工具的环境;</p>
 <p><strong>注意：</strong></p>
 <ol>
@@ -423,13 +423,13 @@
 </ol>
 <hr>
 <p>两个Gulp库可以实现HTML的复用，这次先讲解:</p>
-<h2 id="gulp-file-include"><a href="#gulp-file-include" class="headerlink" title="gulp-file-include"></a>gulp-file-include</h2><p>建立项目根目录，本地安装gulp以及gulp-file-include：<br><img src="../images/gulpFileInclude/localInstall.gif" alt="gulp-file-include" title="localInstall"></p>
+<h2 id="gulp-file-include"><a href="#gulp-file-include" class="headerlink" title="gulp-file-include"></a>gulp-file-include</h2><p>建立项目根目录，本地安装gulp以及gulp-file-include：<br><img src="/images/gulpFileInclude/localInstall.gif" alt="gulp-file-include" title="localInstall"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir gulpFileInclude &amp;&amp; cd gulpFileInclude</div><div class="line">npm install --save-dev gulp gulp-file-include</div></pre></td></tr></table></figure>
-<h3 id="建立目录结构："><a href="#建立目录结构：" class="headerlink" title="建立目录结构："></a>建立目录结构：</h3><p>如上所述构建目录：<br><img src="../images/gulpFileInclude/instruction.gif" alt="build structure" title="instruction"></p>
+<h3 id="建立目录结构："><a href="#建立目录结构：" class="headerlink" title="建立目录结构："></a>建立目录结构：</h3><p>如上所述构建目录：<br><img src="/images/gulpFileInclude/instruction.gif" alt="build structure" title="instruction"></p>
 <p><strong>提取模板</strong>：</p>
-<p>将可共用的部分提取为HTML Segments：<br><img src="../images/gulpFileInclude/stractSegment.gif" alt="stract segments" title="stractSegment"></p>
+<p>将可共用的部分提取为HTML Segments：<br><img src="/images/gulpFileInclude/stractSegment.gif" alt="stract segments" title="stractSegment"></p>
 <p><strong>配置gulp任务</strong>：</p>
-<p>使用gulp来合成整体的HTML：<br><img src="../images/gulpFileInclude/gulpfile.gif" alt="set gulpfile.js" title="gulpfile"></p>
+<p>使用gulp来合成整体的HTML：<br><img src="/images/gulpFileInclude/gulpfile.gif" alt="set gulpfile.js" title="gulpfile"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line">var fileInclude = require(&apos;gulp-file-include&apos;);</div><div class="line"></div><div class="line">gulp.task(&apos;default&apos;,function()&#123;</div><div class="line">		//src和dest的路径都是以gulpfile.js为基寻找的</div><div class="line">		gulp.src(&apos;../src/client/*.html&apos;)</div><div class="line">		.pipe(fileInclude(&#123;</div><div class="line">				prefix:&apos;@@&apos;,</div><div class="line">				basepath:&apos;@file&apos;</div><div class="line">		&#125;))</div><div class="line">		.pipe(gulp.dest(&apos;../dist&apos;))</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <blockquote>
 <p>options.basepath：<br>type: string, 值类型是字符串，该值/作为查找@@include文件的路径前缀;<br>@root： @@include引用文件的相对路径是基于gulpfile.js所在的路径;<br>@file：@@include引用文件的相对路径是基于引用文件所在的路径;（默认该设置的）<br>your-basepath：@@include引用文件的相对路径是基于自定义的路径;</p>
