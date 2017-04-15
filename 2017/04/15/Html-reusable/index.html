@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="愿我们的脸上每天都能看到笑容； 愿我们以后的每一个梦都不会一场空" />
+  <meta name="keywords" content="HTML,include," />
 
 
 
@@ -87,12 +87,37 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="旭光朝影">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。
+重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。
+烦了么？
+
+搭建目录结构开始项目之前，我们先构建一下目录结构：
+1234567891011121314|-src  // 生产环境的资源文件夹	|-cli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML复用（一）">
+<meta property="og:url" content="http://yoursite.com/2017/04/15/Html-reusable/index.html">
 <meta property="og:site_name" content="旭光朝影">
+<meta property="og:description" content="我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。
+重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。
+烦了么？
+
+搭建目录结构开始项目之前，我们先构建一下目录结构：
+1234567891011121314|-src  // 生产环境的资源文件夹	|-cli">
+<meta property="og:image" content="http://yoursite.com/./images/GIF.gif">
+<meta property="og:image" content="http://yoursite.com/./images/localInstall.gif">
+<meta property="og:image" content="http://yoursite.com/./images/instruction.gif">
+<meta property="og:image" content="http://yoursite.com/./images/stractSegment.gif">
+<meta property="og:image" content="http://yoursite.com/./images/gulpfile.gif">
+<meta property="og:updated_time" content="2017-04-15T09:15:17.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="旭光朝影">
+<meta name="twitter:title" content="HTML复用（一）">
+<meta name="twitter:description" content="我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。
+重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。
+烦了么？
+
+搭建目录结构开始项目之前，我们先构建一下目录结构：
+1234567891011121314|-src  // 生产环境的资源文件夹	|-cli">
+<meta name="twitter:image" content="http://yoursite.com/./images/GIF.gif">
 
 
 
@@ -120,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/15/Html-reusable/"/>
 
 
 
 
 
-  <title> 旭光朝影 </title>
+  <title> HTML复用（一） | 旭光朝影 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -151,9 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -300,9 +323,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -332,10 +355,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/15/Html-reusable/" itemprop="url">
-                  HTML复用（一）
-                </a>
+                HTML复用（一）
               
             
           </h1>
@@ -364,6 +384,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/04/15/Html-reusable/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -386,9 +416,7 @@
       
 
       
-        
-          
-            <p>我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。</p>
+        <p>我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。</p>
 <p>重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。</p>
 <p>烦了么？</p>
 <hr>
@@ -431,555 +459,72 @@
 <p>|-listItem.html<br><strong>注意：</strong>这里text[i]使用反引号（Esc下边的按键）包裹;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;section&gt;</div><div class="line">  &lt;h1&gt;@@title&lt;/h1&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    @@for (var i = 0; i &lt; text.length; i++) &#123;</div><div class="line">      &lt;li&gt;`+text[i]+`&lt;/li&gt;</div><div class="line">    &#125;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/section&gt;</div></pre></td></tr></table></figure></p>
 <p>参考文档：<br><a href="https://segmentfault.com/a/1190000003043326" target="_blank" rel="external">HTML 代码复用实践</a><br><a href="https://www.npmjs.com/package/gulp-file-include" target="_blank" rel="external">gulp-file-include</a><br><a href="https://www.npmjs.com/package/gulp-ejs" target="_blank" rel="external">gulp-ejs</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-workflow " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/15/gulp-introduction/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mihuarutanr">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="旭光朝影">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/15/gulp-introduction/" itemprop="url">
-                  Gulp使用说明
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T14:31:35+08:00">
-                2017-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/HTML-include/" rel="tag"># HTML,include</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          <h2 id="应用环境"><a href="#应用环境" class="headerlink" title="应用环境"></a>应用环境</h2><p>确保安装好NodeJS和NPM；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">在命令行输入：node -v</div><div class="line">命令行输出：v6.9.5</div><div class="line"></div><div class="line">在命令行输入：npm -v</div><div class="line">命令行输出：v4.2.0</div></pre></td></tr></table></figure>
-<p>只要有输出版本号就代表已经安装好了应用环境；<br>环境没有安装的话，会命令行会返回<code>command not found</code>，安装对应的NodeJS/NPM；</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/15/gulp-introduction/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/15/gulp-introduction/" rel="next" title="Gulp使用说明">
+                <i class="fa fa-chevron-left"></i> Gulp使用说明
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-server " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/ubuntu-install-tools-introduction/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mihuarutanr">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="旭光朝影">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/04/ubuntu-install-tools-introduction/" itemprop="url">
-                  ubuntu软件安装说明
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T09:22:20+08:00">
-                2017-04-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>ubuntu 16.04 x86_64 kernel 4.4.0-47-generic</p>
-<h1 id="必备软件"><a href="#必备软件" class="headerlink" title="必备软件"></a>必备软件</h1><h2 id="chrome-浏览器"><a href="#chrome-浏览器" class="headerlink" title="chrome 浏览器"></a>chrome 浏览器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/</div><div class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install google-chrome-stable</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/04/ubuntu-install-tools-introduction/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/git-introduction/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mihuarutanr">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="旭光朝影">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/30/git-introduction/" itemprop="url">
-                  git入门
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T13:53:49+08:00">
-                2017-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><code>sudo apt-get install git</code></p>
-<h1 id="初始化git库"><a href="#初始化git库" class="headerlink" title="初始化git库"></a>初始化git库</h1><h2 id="通过本地已有文件初始化git库"><a href="#通过本地已有文件初始化git库" class="headerlink" title="通过本地已有文件初始化git库"></a>通过本地已有文件初始化git库</h2><p><code>git init</code></p>
-<h2 id="通过克隆远程库初始化git库"><a href="#通过克隆远程库初始化git库" class="headerlink" title="通过克隆远程库初始化git库"></a>通过克隆远程库初始化git库</h2><p><code>git clone &lt;remote repository url&gt;</code> –&gt; 新建一个<strong>远端的仓库名</strong>的文件夹</p>
-<p><code>git clone &lt;remote repository url&gt; &lt;directory name&gt;</code> –&gt; 克隆远程库并放置于<strong>指定的文件夹</strong></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/30/git-introduction/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-workflow " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/31/Webpack_CodeSplitting/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mihuarutanr">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="旭光朝影">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/31/Webpack_CodeSplitting/" itemprop="url">
-                  WebpackのCode Splitting
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-31T06:50:42+08:00">
-                2017-01-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Code-splitting"><a href="#Code-splitting" class="headerlink" title="Code splitting"></a>Code splitting</h2><ul>
-<li>对于大型Web应用程序，将所有代码放入单个文件并不高效，尤其是在<strong>某些情况</strong>下只需要某些代码块的情况下；</li>
-<li>Webpack有一个功能，将代码库拆分为“chunks”，并根据需要加载；</li>
-<li>当然，这是可选的功能，由开发者自己在代码中定义拆分点， Webpack负责依赖关系，输出文件和运行；</li>
-<li>代码分割不仅仅是将<strong>通用的代码</strong>提取到公共Chunks中。更显着的特征是代码拆分可以用于将代码拆分为<strong>按需加载</strong>的块——这可以保证初始下载的代码很小，并在应用程序请求时按需下载代码；</li>
-</ul>
-<hr>
-<p><strong>实现Code splitting，需要定义模块（这里讲解CommonJS 和AMD规范），并按需加载（CommonJS和AMD对应的引入方法）；</strong><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/31/Webpack_CodeSplitting/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -987,6 +532,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -1006,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -1060,6 +620,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建目录结构"><span class="nav-number">1.</span> <span class="nav-text">搭建目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建复用HTML的环境"><span class="nav-number">2.</span> <span class="nav-text">搭建复用HTML的环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-file-include"><span class="nav-number">3.</span> <span class="nav-text">gulp-file-include</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立目录结构："><span class="nav-number">3.1.</span> <span class="nav-text">建立目录结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入数据"><span class="nav-number">3.2.</span> <span class="nav-text">引入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局变量"><span class="nav-number">3.2.1.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部变量"><span class="nav-number">3.2.2.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入外部数据"><span class="nav-number">3.2.3.</span> <span class="nav-text">引入外部数据</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1167,6 +743,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
