@@ -89,34 +89,25 @@
 
 <meta name="description" content="我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。
 重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。
-烦了么？
-
-搭建目录结构开始项目之前，我们先构建一下目录结构：
-1234567891011121314|-src  // 生产环境的资源文件夹	|-cli">
+烦了么？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML复用（一）">
 <meta property="og:url" content="http://yoursite.com/2017/04/15/Html-reusable/index.html">
 <meta property="og:site_name" content="旭光朝影">
 <meta property="og:description" content="我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。
 重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。
-烦了么？
-
-搭建目录结构开始项目之前，我们先构建一下目录结构：
-1234567891011121314|-src  // 生产环境的资源文件夹	|-cli">
+烦了么？">
 <meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/GIF.gif">
 <meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/localInstall.gif">
 <meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/instruction.gif">
 <meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/stractSegment.gif">
 <meta property="og:image" content="http://yoursite.com/../images/gulpFileInclude/gulpfile.gif">
-<meta property="og:updated_time" content="2017-04-15T09:23:02.000Z">
+<meta property="og:updated_time" content="2017-04-15T09:24:49.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML复用（一）">
 <meta name="twitter:description" content="我们在做页面的过程中，会写很多重复的东西，包括HTML/CSS，这里谈论一下HTML的复用。
 重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。
-烦了么？
-
-搭建目录结构开始项目之前，我们先构建一下目录结构：
-1234567891011121314|-src  // 生产环境的资源文件夹	|-cli">
+烦了么？">
 <meta name="twitter:image" content="http://yoursite.com/../images/gulpFileInclude/GIF.gif">
 
 
@@ -420,6 +411,7 @@
 <p>重用的部分有但不仅限于：头部，底部，侧边栏，列表。很多朋友对于这些重复的部分通过复制粘贴到新的页面，而如果以后要维护的话，要修改每个页面中的相关部分。</p>
 <p>烦了么？</p>
 <hr>
+<a id="more"></a>
 <h2 id="搭建目录结构"><a href="#搭建目录结构" class="headerlink" title="搭建目录结构"></a>搭建目录结构</h2><p>开始项目之前，我们先构建一下目录结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">|-src  // 生产环境的资源文件夹</div><div class="line">	|-client  // 可视资源存放的文件夹</div><div class="line">		|-index.html  // 主页html 文件</div><div class="line">		|-include  // 可复用的html片段</div><div class="line">		|-lib  // 第三方工具库</div><div class="line">		|-logic  // 自定义JS逻辑代码</div><div class="line">		|-scss  // 项目样式文件</div><div class="line">			|-index.scss</div><div class="line">			|-include  // 可复用的样式文件夹</div><div class="line">			|-images  // 各页面公共图片</div><div class="line">			|-fonts  // 字体文件：iconfont</div><div class="line">		|-images  // 项目示例图片</div><div class="line">	|-server // 数据资源存放的文件夹</div><div class="line">|-config //编辑部分配置文件：站点模板/图标</div></pre></td></tr></table></figure>
 <h2 id="搭建复用HTML的环境"><a href="#搭建复用HTML的环境" class="headerlink" title="搭建复用HTML的环境"></a>搭建复用HTML的环境</h2><p>win7安装node：<br><img src="../images/gulpFileInclude/GIF.gif" alt="安装node与gulp" title="GIF"></p>
