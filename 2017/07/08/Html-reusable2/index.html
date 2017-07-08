@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://yoursite.com/images/gulpEjs/compile.gif">
 <meta property="og:image" content="http://yoursite.com/images/gulpEjs/innerData.gif">
 <meta property="og:image" content="http://yoursite.com/images/gulpEjs/outerData.gif">
-<meta property="og:updated_time" content="2017-07-08T13:58:27.653Z">
+<meta property="og:updated_time" content="2017-07-08T14:36:46.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML复用(二)">
 <meta name="twitter:description" content="上一次介绍了使用gulp-file-include实现了HTML模板的复用，这次我们介绍一个新的npm包来完成这项任务，会有更好的体验呢；  gulp-file-include存在的问题： 非JS语法； 循环、条件语句无法嵌套；">
@@ -434,6 +434,7 @@
 <p>解析变量：<br><code>&lt;%= variableName %&gt;</code></p>
 <p>JS逻辑：<br><code>&lt;% JS逻辑 %&gt;</code></p>
 <p>JavaScript和html混合写法，示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//开始标识：</div><div class="line">&lt;% arr.forEach(function(item)&#123; %&gt;</div><div class="line">  //中间写HTML结构</div><div class="line">  &lt;div&gt;</div><div class="line">    &lt;h2&gt;&lt;%= 变量名 %&gt;&lt;/h2&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">//结束标识：</div><div class="line">&lt;% &#125;) %&gt;</div></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/mihuartuanr/demo-gulp-ejs" target="_blank" rel="external">使用示例</a></p>
 
       
     </div>
